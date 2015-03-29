@@ -5,7 +5,7 @@ WEBROOT=~/hello_jenkins/
 TARFILE=nodejs-backup.$(date +%Y%m%d-%H%M).tar.gz
 
         printf "${yellow}Backing up code on $SERVER ... ${reset}"
-        ssh -l bitnami $SERVER tar cCzf $WEBROOT /tmp/$TARFILE 
+        ssh -l bitnami $SERVER tar czf /tmp/$TARFILE $WEBROOT 
 
         if (( $? == 0 ))
         then
